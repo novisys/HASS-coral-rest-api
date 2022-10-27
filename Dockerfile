@@ -22,13 +22,13 @@ RUN cd /tmp && \
 
 
 WORKDIR /app
-RUN  pip3 install Pillow
-RUN  pip3 install Flask
+RUN  pip3 install pillow
+RUN  pip3 install flask
 
 
 # Temporarily using my own code until https://github.com/robmarkcole/coral-pi-rest-server/issues/67 is resolved
 # RUN wget https://raw.githubusercontent.com/grinco/coral-pi-rest-server/v2.1/coral-app.py -O /app/coral-app.py
- RUN wget https://raw.githubusercontent.com/robmarkcole/coral-pi-rest-server/master/coral-app.py -O /app/coral-app.py
+RUN wget https://raw.githubusercontent.com/robmarkcole/coral-pi-rest-server/master/coral-app.py -O /app/coral-app.py
 
 
 
