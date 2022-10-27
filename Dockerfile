@@ -14,18 +14,23 @@ RUN apt-get -y install python3-edgetpu libedgetpu1-legacy-std
 
 # install the APP
 RUN cd /tmp && \
-    wget "https://github.com/robmarkcole/coral-pi-rest-server/archive/refs/tags/v1.0.zip" -O /tmp/server.zip && \
+    wget "https://github.com/robmarkcole/coral-pi-rest-server/archive/refs/tags/2.1.zip" -O /tmp/server.zip && \
     unzip /tmp/server.zip && \
     rm -f /tmp/server.zip && \
-    mv coral-pi-rest-server-1.0 /app
+    mv coral-pi-rest-server-2.1 /app
 
 
 
 WORKDIR /app
-RUN  pip3 install
+RUN  pip3 install Pillow
+RUN  pip3 install Flask
+
 
 # Temporarily using my own code until https://github.com/robmarkcole/coral-pi-rest-server/issues/67 is resolved
-RUN wget https://raw.githubusercontent.com/grinco/coral-pi-rest-server/v1.0/coral-app.py -O /app/coral-app.py
+# RUN wget https://raw.githubusercontent.com/grinco/coral-pi-rest-server/v2.1/coral-app.py -O /app/coral-app.py
+ RUN wget https://raw.githubusercontent.com/robmarkcole/coral-pi-rest-server/master/coral-app.py -O /app/coral-app.py
+
+
 
 COPY run.sh /app
 RUN chmod a+x /app/run.sh
