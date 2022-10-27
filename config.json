@@ -1,8 +1,8 @@
 {
   "name": "CORAL TPU Rest API",
-  "version": "0.1.21",
+  "version": "0.2.11",
   "slug": "coral-api",
-  "description": "CORAL REST API compatible with Deepstack addon",
+  "description": "CORAL REST API compatible with Deepstack mod Novisys",
   "url": "https://github.com/novisys/HASS-coral-rest-api",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
