@@ -22,8 +22,9 @@ RUN cd /tmp && \
 
 
 WORKDIR /app
-RUN  pip3 install pillow
-RUN  pip3 install flask
+#RUN  pip3 install pillow
+#RUN  pip3 install flask
+RUN  pip3 install --no-cache-dir -r requirements.txt 
 
 
 # Temporarily using my own code until https://github.com/robmarkcole/coral-pi-rest-server/issues/67 is resolved
